@@ -1,6 +1,6 @@
 # DEFTOSVG
 
-##Technical Aspect
+## Technical Aspect
 
 1. Given the LEF and DEF files browsed by the user, the website calls a function generating and SVG file by parsing the files and generating the corresponding SVG file.
 
@@ -13,7 +13,7 @@
 • Provide an interface to search and highlight: by generating the corresponding searchable lists using jQuery
 • Highlight the areas that have DRC violations
 
-##What Has Been Done
+## What Has Been Done
 
 1. Python SVG Generation Function
 2. Flask Backend Handling
@@ -22,12 +22,12 @@
 5. Layers Enabling List of Checkboxes
 6. Searchable Lists Generation 
 
-##What is Left
+## What is Left
 
 1. DRC Violations Highlighting
 2. Searched Element Highlighting
 
-##References
+## References
 
 https://github.com/ariutta/svg-pan-zoom#svg-pan-zoom-library
 
