@@ -4,7 +4,7 @@
 
 1. Given the LEF and DEF files browsed by the user, the website calls a function generating and SVG file by parsing the files and generating the corresponding SVG file.
 
-2. The function is called using Flask python library that is used to serve for the backend of the website to take the file names as inputs from the user and call the SVG generation function.
+2. The function is called using Flask python library to serve as the backend framework of the website to take the file names as inputs from the user and call the SVG generation function.
 
 3. The website is offering the user the following features to be executed on the frondend of the website using jQuery, HTML, and CSS:
 
