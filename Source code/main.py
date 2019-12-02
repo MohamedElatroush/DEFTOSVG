@@ -75,7 +75,7 @@ def toSVG(read_path,path):
     for i in range(0, len(MACRO)):                                    #for loop for drawing of components
 
         if k < len(MACRO):
-            g = draw.Group(fill="white", Class=MACRO[k], id=MACRO[k] + "_c" + str(counter))
+            g = draw.Group(fill="white", Class="cell", id=MACRO[k] + "_c" + str(counter))
             for j in range(0, len(lef_info)):                        #loop on th size of the block in the LEF file on details of a macro
                 if MACRO[k] ==lef_info[j]:                           #Matching macros from LEF / DEF
                     counter = counter+1
@@ -201,6 +201,7 @@ def toSVG(read_path,path):
                 strokewidth = 1.2 * 100
 
 
+
             #print(RouteStart)
             for j in range(i+1 ,len(nets) ):
                 if(nets[j]=="M2_M1" or nets[j]=="M3_M2" or nets[j] == "M4_M3" or nets[j] == "metal1" or nets[j] == "metal2" or nets[j] == "metal3" or nets[j] == "metal4" or nets[j] == ";" ):
@@ -215,7 +216,7 @@ def toSVG(read_path,path):
                     route_wirey0 = int(nets[temp + 2].strip("[],"))
                     route_wirex1 = int(nets[temp + 3].strip("[],"))
                     route_wirey1 = int(nets[temp + 4].strip("[],"))
-                    p = draw.Path(stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0)
+                    p = draw.Path(stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0, Class = "net")
                     p.M(route_wirex0-dx0, -(height - (route_wirey0- dy0 )  ))                 # Start path at point
                     p.l(route_wirex1-route_wirex0 ,  route_wirey1-route_wirey0)                # Draw line to
                     d.append(p)
@@ -254,7 +255,8 @@ def toSVG(read_path,path):
             pin_pos1=int(pin_info[b + 5])
             pin_pos2=int(pin_info[b + 6])
             pin_name=pin_info[b-1]
-            d.append(draw.Rectangle(pin_pos1 - dx0 , -(height - (pin_pos2- dy0)), pinx1-pinx0, piny1-piny0, fill='#B1725A',fill_opacity=0.6, stroke_width=1, stroke='black'))
+            PINS = pin_name
+            d.append(draw.Rectangle(pin_pos1 - dx0 , -(height - (pin_pos2- dy0)), pinx1-pinx0, piny1-piny0, fill='#B1725A',fill_opacity=0.6, stroke_width=1, stroke='black',Class ="PIN",id=PINS))
             d.append(draw.Text(pin_name, 40, pin_pos1- dx0 , -(height - (pin_pos2 - dy0 -20)), centre='origin'))
 
 
