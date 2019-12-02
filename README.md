@@ -1,5 +1,34 @@
 # DEFTOSVG
 
-  We used a given python def and lef file parsers to parse the needed data for generating the SVG file that handles drawing the layouts. Verification is done by comparing our output to an output from Klayout. We used the drawSVG library in python to handle drawing the cells/nets/pins...etc. 
-  
-  The program asks the user to enter the DEF file path, as well as the LEF file path. After extracting the needed information we called functions from drawSVG library to draw the rectangles representing the cells as well as the routing wires and pins. A for loop is created to match the name of a macro from the DEF (including the placement) to the same cell name in the LEF file to know the exact dimensions of the rects, many flags were created to identify which metal layer to use, or OBS if exists. Different loops with the same logic are created, such as the pins, as well as nets to perform routing on our design. 
+##Technical Aspect
+
+1. Given the LEF and DEF files browsed by the user, the website calls a function generating and SVG file by parsing the files and generating the corresponding SVG file.
+
+2. The function is called using Flask python library that is used to serve for the backend of the website to take the file names as inputs from the user and call the SVG generation function.
+
+3. The website is offering the user the following features to be executed on the frondend of the website using jQuery, HTML, and CSS:
+
+• Zooming and Panning: using svg-pan-zoom library: https://github.com/ariutta/svg-pan-zoom#svg-pan-zoom-library
+• Display the cell type and instance name (type/name) when you hoover over the cell
+• Provide an interface to search and highlight: by generating the corresponding searchable lists using jQuery
+• Highlight the areas that have DRC violations
+
+##What Has Been Done
+
+1. Python SVG Generation Function
+2. Flask Backend Handling
+3. Zooming and Panning Feature
+4. Cell Name Display on Hovering
+5. Layers Enabling List of Checkboxes
+6. Searchable Lists Generation 
+
+##What is Left
+
+1. DRC Violations Highlighting
+2. Searched Element Highlighting
+
+##References
+
+https://github.com/ariutta/svg-pan-zoom#svg-pan-zoom-library
+
+
