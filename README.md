@@ -1,4 +1,4 @@
-# DEFTOSVG
+#  Web-based Layout Viewer
 
 ## Technical Aspects
 
