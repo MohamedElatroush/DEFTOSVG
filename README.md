@@ -8,10 +8,10 @@
 
 3. The website is offering the user the following features to be executed on the frondend of the website using jQuery, HTML, and CSS:
 
-. Zooming and Panning: using svg-pan-zoom library: https://github.com/ariutta/svg-pan-zoom#svg-pan-zoom-library
-. Display the cell type and instance name (type/name) when you hoover over the cell
-. Provide an interface to search and highlight: by generating the corresponding searchable lists using jQuery
-. Highlight the areas that have DRC violations
+• Zooming and Panning: using svg-pan-zoom library: https://github.com/ariutta/svg-pan-zoom#svg-pan-zoom-library  
+• Display the cell type and instance name (type/name) when you hoover over the cell  
+• Provide an interface to search and highlight: by generating the corresponding searchable lists using jQuery  
+• Highlight the areas that have DRC violations
 
 ## What Has Been Done
 
