@@ -11,7 +11,10 @@ def toSVG(read_path,path):
             dotindx=pth[-1].index(".",0)
             pth[-1] = pth[-1][0:dotindx]
 
+############
 
+
+####################
 
     def_parser = DefParser(read_path)
     def_parser.parse()
@@ -25,13 +28,8 @@ def toSVG(read_path,path):
     # print(nets)
 
 
-
-
-
-
-
     MACRO = macro.split() #DEF INFO CARRIER
-    # print(MACRO)
+    print(MACRO)
 
     z = def_parser.diearea
 
@@ -49,7 +47,7 @@ def toSVG(read_path,path):
 
     width=int(x3)-int(x1)
     height=int(x4)-int(x2)
-
+    clip = draw.ClipPath()
     d = draw.Drawing(width,height, origin=(0,- height))                        #drawing of diearea
     d.append(draw.Rectangle(dx0, -(height+dy0), width, height, fill='#D8FEEA', fill_opacity=0.4, stroke_width=1,stroke='black'))
 
@@ -70,24 +68,30 @@ def toSVG(read_path,path):
     #print(lef_info)
 
     k = 0
+    # g = ""
 
+    counter=0
 
     for i in range(0, len(MACRO)):                                    #for loop for drawing of components
 
         if k < len(MACRO):
+            g = draw.Group(fill="white", Class=MACRO[k], id=MACRO[k] + "_c" + str(counter))
             for j in range(0, len(lef_info)):                        #loop on th size of the block in the LEF file on details of a macro
                 if MACRO[k] ==lef_info[j]:                           #Matching macros from LEF / DEF
+                    counter = counter+1
+                    # print(MACRO[k])
                     opacity = 0.6                                    #opacity of all rectangles, opacity only changes if OBS
                     xplacement = float(MACRO[k + 1])                 #extracting and storing placement and orientation of macro from DEF
                     yplacement=float(MACRO[k+2])
                     orientation=MACRO[k+3]
-                    endindx = lef_info.index("END",j)                #Extracting macros's details
+                    endindx = lef_info.index("END", j)                #Extracting macros's details
                     for m in range(j,endindx):
                         if (lef_info[m]=="Size"):
                             swidth= float(lef_info[m+1]) *100                   #width size of macro
                             sheight=float(lef_info[m+2]) *100                   #height width size of macrp
                             d.append(draw.Rectangle(xplacement - dx0, -(height - (yplacement - dy0 )), swidth, sheight,fill='#7D5AB1', fill_opacity=0, stroke_width=2, stroke='black'))
                         elif(lef_info[m]=="Layer:" or lef_info[m]=="Layer" or lef_info[m]=="LAYER" ):            #Layer
+                            met = lef_info[m + 1]
                             if (lef_info[m+1]=="metal1"):
                                 color = "#7D5AB1"                      #COLOR CODE For each metal
                             elif (lef_info[m+1]=="metal2"):
@@ -103,8 +107,10 @@ def toSVG(read_path,path):
                             elif (lef_info[m + 1] == "via3"):
                                 color = "#83FFE1"
                         elif ((lef_info[m]=="PIN:")):
+                            met = lef_info[m + 1]
                             pin = lef_info[m+1]                 #PIN NAME
                         elif ((lef_info[m] == "OBS")):          #setting different opacity for rectangles
+                            met = lef_info[m + 1]
                             opacity = 0.6
                         elif ((lef_info[m]=="RECT")):           #extracting dimensions of rectangles in LEF
                             x0 = float(lef_info[m+1]) * 100
@@ -114,26 +120,27 @@ def toSVG(read_path,path):
                             rwidth = x01 - x0                   #width of rectangle
                             rheight = y01 - y0                  #height of rectangle
                             if (orientation=="N"):
-                                d.append(draw.Rectangle(xplacement-dx0+x0 , -(height-(yplacement-dy0+y0)), rwidth, rheight, fill=color, fill_opacity=opacity, stroke_width=1,stroke='black',class_='hello'))
-                                d.append(draw.Text(pin, 20,xplacement-dx0+x0 ,-(height-(yplacement-dy0+y0)) , centre='origin'))
+                                g.append(draw.Rectangle(xplacement-dx0+x0 , -(height-(yplacement-dy0+y0)), rwidth, rheight, fill=color, fill_opacity=opacity, stroke_width=1, stroke='black' , Class=met))
+                                g.append(draw.Text(pin, 20,xplacement-dx0+x0 ,-(height-(yplacement-dy0+y0)) , centre='origin'))
                             elif(orientation=="FN"):
                                 FNx= x0+((swidth/2 - x0)*2)- rwidth
-                                d.append(draw.Rectangle(xplacement - dx0 + FNx, -(height - (yplacement - dy0 + y0)), rwidth,rheight, fill=color, fill_opacity=opacity, stroke_width=1,stroke='black'))
-                                d.append(draw.Text(pin, 20, xplacement - dx0 + FNx, -(height - (yplacement - dy0 + y0)), centre='origin'))
+                                g.append(draw.Rectangle(xplacement - dx0 + FNx, -(height - (yplacement - dy0 + y0)), rwidth,rheight, fill=color, fill_opacity=opacity, stroke_width=1,stroke='black', Class=met))
+                                g.append(draw.Text(pin, 20, xplacement - dx0 + FNx, -(height - (yplacement - dy0 + y0)), centre='origin'))
                             elif(orientation=="FS"):
                                 FSy=y0+((sheight/2 - y0)*2)- rheight
-                                d.append(draw.Rectangle(xplacement - dx0 + x0, -(height - (yplacement - dy0 + FSy)), rwidth,rheight, fill=color, fill_opacity=opacity, stroke_width=1,stroke='black'))
-                                d.append(draw.Text(pin, 20, xplacement - dx0 + x0, -(height - (yplacement - dy0 + FSy)), centre='origin'))
+                                g.append(draw.Rectangle(xplacement - dx0 + x0, -(height - (yplacement - dy0 + FSy)), rwidth,rheight, fill=color, fill_opacity=opacity, stroke_width=1,stroke='black', Class=met))
+                                g.append(draw.Text(pin, 20, xplacement - dx0 + x0, -(height - (yplacement - dy0 + FSy)), centre='origin'))
                             elif(orientation=="S"):
                                 Sx= x0+((swidth/2 - x0)*2)- rwidth
                                 Sy= y0+((sheight/2 - y0)*2)- rheight
-                                d.append(draw.Rectangle(xplacement - dx0 + Sx, -(height - (yplacement - dy0 + Sy)), rwidth,rheight, fill=color, fill_opacity=opacity, stroke_width=1, stroke='black'))
-                                d.append(draw.Text(pin, 35, xplacement - dx0 + Sx, -(height - (yplacement - dy0 + Sy)), centre='origin'))
-
+                                g.append(draw.Rectangle(xplacement - dx0 + Sx, -(height - (yplacement - dy0 + Sy)), rwidth,rheight, fill=color, fill_opacity=opacity, stroke_width=1, stroke='black', Class=met))
+                                g.append(draw.Text(pin, 35, xplacement - dx0 + Sx, -(height - (yplacement - dy0 + Sy)), centre='origin'))
+            d.append(g)
             k = k + 4
 
     nx=""
     ny=""
+
 
     for i in range(0,len(nets)):                    #for loop to draw vias
         if(nets[i] == "M2_M1" or nets[i] == "M3_M2" or nets[i] == "M4_M3"  ):
