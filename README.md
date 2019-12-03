@@ -21,12 +21,12 @@
 3. Zooming and Panning Feature
 4. Cell Name Display on Hovering
 5. Layers Enabling List of Checkboxes
-6. Searchable Lists Generation 
+6. Searchable Lists Generation
+7. Searched Element Highlighting
 
 ## What is Left
 
 1. DRC Violations Highlighting
-2. Searched Element Highlighting
 
 ## References
 
