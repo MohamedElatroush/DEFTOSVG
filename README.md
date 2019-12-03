@@ -13,6 +13,12 @@
     • Provide an interface to search and highlight: by generating the corresponding searchable lists using jQuery  
     • Highlight the areas that have DRC violations
 
+## How to Build and Run
+To run this website locally, clone the repo and run the server.py file using the command
+```
+python server.py
+```
+Now head over to http://127.0.0.1:5000/, the main web page should display. 
 
 ## What Has Been Done
 
