@@ -13,24 +13,6 @@
     • Provide an interface to search and highlight: by generating the corresponding searchable lists using jQuery  
     • Highlight the areas that have DRC violations
 
-## Dependencies
-1. Python3: 3.8 
-2. DrawSvg 1.3.1
-```
-pip install drawSvg
-```
-3. Flask 1.1.1
-```
-pip install Flask
-```
-4. Regex 2019.11.1
-```
-pip install regex
-```
-5. Matplotlib 3.1.1
-```
-pip install matplotlib
-```
 
 ## How to Build and Run
 To run this website locally, clone the repo and run the server.py file using the command
