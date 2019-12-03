@@ -4,43 +4,36 @@
     <script src="jquery-3.4.1.min.js"></script>
     <script src="svgZoomPan.js"></script>
     <script src="jquery.js"></script>
-    <script src="svg.js"></script>
-
-            
+    <script src="svg.js"></script>        
 </head>
 
-
 <style>
-            
-            body {
-                background: url(background.jpg) repeat 0 0; 
-                background-size: cover;
-            }
-
-            *[role="form"] {
-                max-width: 530px;
-                padding: 15px;
-                margin: 0 auto; 
-                margin-top: 10%;
-                margin-bottom: 10%;
-                border-radius: 0.3em;
-                background-color: #f2f2f2;
-            }
-
-            *[role="form"] h2 { 
-                font-family: 'Open Sans' , sans-serif;
-                font-size: 40px;
-                font-weight: 600;
-                color: #000000;
-                margin-top: 5%;
-                text-align: center;
-                text-transform: uppercase;
-                letter-spacing: 4px;
-            }
-
+        body {
+            background: url(background.jpg) repeat 0 0; 
+            background-size: cover;
+        }
     
-</style>
-
+        *[role="form"] {
+            max-width: 530px;
+            padding: 15px;
+            margin: 0 auto; 
+            margin-top: 10%;
+            margin-bottom: 10%;
+            border-radius: 0.3em;
+            background-color: #f2f2f2;
+        }
+    
+        *[role="form"] h2 { 
+            font-family: 'Open Sans' , sans-serif;
+            font-size: 40px;
+            font-weight: 600;
+            color: #000000;
+            margin-top: 5%;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+    </style>
 
 <html>
     <!-- All the files that are required -->
@@ -51,7 +44,7 @@
             <div class="login-form-1">
                 <form id="login-form" class="text-left">
                     <div class="form-group login-group-checkbox">
-                        <label for="selectItems" class="col-sm-3 control-label">Select Items to be Hidden</label>
+                        <label for="selectItems" class="col-sm-3 control-label">Select Items to be shown</label>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
                             <input type="checkbox" class="" name="acc_type" id="metal1">
@@ -112,7 +105,7 @@
                         <h5 id='cellViewer'>View</h5>
                         <svg id = "svgContainer" width="400" height="210">
                             <g id='nand1' class="cell">
-                                <rect width="300" height="100" style="fill:rgb(0,0,200);stroke-width:3;stroke:rgb(0,0,0)" Class="metal1"/>
+                                <rect id = "test" width="300" height="100" fill-opacity="0.5" style="fill:rgb(0,0,200);" Class="metal1"/>
                             </g>
                         </svg>
                     </div>
