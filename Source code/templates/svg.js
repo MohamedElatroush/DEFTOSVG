@@ -26,12 +26,17 @@ $( document ).ready(function() {
     });
     
     $( ".net" ).each(function() {
-        $("#selectCell").append(new Option($(this).attr('id'), $(this).attr('id')));
+        $("#selectNet").append(new Option($(this).attr('id'), $(this).attr('id')));
     });
     
     $( ".PIN" ).each(function() {
-        $("#selectCell").append(new Option($(this).attr('id'), $(this).attr('id')));
+        $("#selectPin").append(new Option($(this).attr('id'), $(this).attr('id')));
     });
+
+    
+    $("#" + $("#selectCell").val()).css({stroke:"#FF8300", "stroke-width":3});
+    $("#" + $("#selectNet").val()).css({stroke:"#FF8300", "stroke-width":3});
+    $("#" + $("#selectPin").val()).css({stroke:"#FF8300", "stroke-width":3});
     
     
     //hovering feature
