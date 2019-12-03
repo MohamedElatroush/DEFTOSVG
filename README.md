@@ -27,6 +27,7 @@
 ## What is Left
 
 1. DRC Violations Highlighting
+2. Fixing Pages Navigation
 
 ## References
 
