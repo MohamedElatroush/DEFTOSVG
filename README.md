@@ -33,7 +33,7 @@ Now head over to http://127.0.0.1:5000/, the main web page should display.
 
 ## What is Left
 
-1. Pins Highlighting
+1. Enhancing Pins Highlighting
 2. Searchable Nets Generation
 3. DRC Violations Highlighting
 
