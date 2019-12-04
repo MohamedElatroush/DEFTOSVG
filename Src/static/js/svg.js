@@ -1,0 +1,75 @@
+$( document ).ready(function() {
+
+
+    //zooming and panning feature
+    var options = {
+        panEnabled: true
+       , controlIconsEnabled: false
+       , zoomEnabled: true
+       , dblClickZoomEnabled: true
+       , mouseWheelZoomEnabled: true
+       , preventMouseEventsDefault: true
+       , zoomScaleSensitivity: 0.2
+       , minZoom: 1
+       , maxZoom: 10
+       , fit: true
+       , contain: true
+       , center: true
+       , refreshRate: 'auto'
+       }
+     var svgElement = document.querySelector('#svgContainer');
+     var panZoomTiger = svgPanZoom(svgElement,options);
+
+
+    //searchable list generation
+    $( ".cell" ).each(function() {
+        $("#selectCell").append(new Option($(this).attr('id'), $(this).attr('id')));
+    });
+    
+    $( ".net" ).each(function() {
+        $("#selectNet").append(new Option($(this).attr('id'), $(this).attr('id')));
+    });
+    
+    $( ".PIN" ).each(function() {
+        $("#selectPin").append(new Option($(this).attr('id'), $(this).attr('id')));
+    });
+
+
+    $('#selectCell').on('change', function() {
+            $("#" + $("#selectCell").val()).css({stroke:"#ffff00", "stroke-width":10});
+            setTimeout(function afterTwoSeconds() {  
+                $("#" + $("#selectCell").val()).css({stroke:"#ffff00", "stroke-width":0});
+              }, 500)
+    });
+
+    $('#selectNet').on('change', function() {
+        $("#" + $("#selectNet").val()).css({stroke:"#ffff00", "stroke-width":10});
+        setTimeout(function afterTwoSeconds() {  
+            $("#" + $("#selectNet").val()).css({stroke:"#ffff00", "stroke-width":0});
+          }, 500)
+    });
+
+    $('#selectPin').on('change', function() {
+        $("#" + $("#selectPin").val()).css({stroke:"#ffff00", "stroke-width":10});
+        setTimeout(function afterTwoSeconds() {  
+            $("#" + $("#selectPin").val()).css({stroke:"#ffff00", "stroke-width":0});
+        }, 500)
+    });
+    
+
+
+    
+    
+    
+    //hovering feature
+    $('body').on('mouseover', '.cell', function() {
+        $('#cellViewer').html($(this).attr('id'));
+    });
+
+    //enabling visibility feature
+    $('body').on('change', 'input[type="checkbox"]', function(){
+        var c = $(this).attr('id');
+        $('.'+ c).toggle();
+    });
+});
+
