@@ -33,8 +33,10 @@ Now head over to http://127.0.0.1:5000/, the main web page should display.
 
 ## What is Left
 
-1. DRC Violations Highlighting
-2. Making a Bounding Rectangle for Each Cell, to make in invisible by default.
+1. Making a Bounding Rectangle for Each Cell, to make in invisible by default
+2. Searchable Nets Generation
+3. DRC Violations Highlighting
+
 
 ## References
 
