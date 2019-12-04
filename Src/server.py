@@ -12,11 +12,11 @@ def index():
 @app.route('/handle_data',methods=['POST'])
 def handle_data():
     defF = request.files['defF']
-    defF.save(os.path.join('C:/Users/HP/Desktop/DEFTOSVG-master/Source code', defF.filename))
+    defF.save(os.path.join('D:/Uni/Fall 19/DD2/DEFTOSVG-master/Source code', defF.filename))
 
 
     lefF = request.files['lefF']
-    lefF.save(os.path.join('C:/Users/HP/Desktop/DEFTOSVG-master/Source code', lefF.filename))
+    lefF.save(os.path.join('D:/Uni/Fall 19/DD2/DEFTOSVG-master/Source code', lefF.filename))
 
     DEF = defF.filename
     LEF = lefF.filename
