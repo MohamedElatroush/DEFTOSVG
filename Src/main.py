@@ -78,7 +78,7 @@ def toSVG(read_path,path):
     for i in range(0, len(MACRO)):                                    #for loop for drawing of components
 
         if k < len(MACRO):
-            g = draw.Group(fill="white", class_="cell", id=MACRO[k] + "_c" + str(counter))
+            g = draw.Group(fill="white")
             for j in range(0, len(lef_info)):                        #loop on th size of the block in the LEF file on details of a macro
                 if MACRO[k] ==lef_info[j]:                           #Matching macros from LEF / DEF
                     counter = counter+1
@@ -92,7 +92,7 @@ def toSVG(read_path,path):
                         if (lef_info[m]=="Size"):
                             swidth= float(lef_info[m+1]) *100                   #width size of macro
                             sheight=float(lef_info[m+2]) *100                   #height width size of macrp
-                            d.append(draw.Rectangle(xplacement - dx0, -(height - (yplacement - dy0 )), swidth, sheight,fill='#7D5AB1', fill_opacity=0))
+                            d.append(draw.Rectangle(xplacement - dx0, -(height - (yplacement - dy0 )), swidth, sheight,fill='#a877f2', stroke='#412f5c',stroke_width=10, fill_opacity=0.2, class_="cell", id=MACRO[k] + "_c" + str(counter)))
                         elif(lef_info[m]=="Layer:" or lef_info[m]=="Layer" or lef_info[m]=="LAYER" ):            #Layer
                             met = lef_info[m + 1]
                             if (lef_info[m+1]=="metal1"):
@@ -124,20 +124,20 @@ def toSVG(read_path,path):
                             rheight = y01 - y0                  #height of rectangle
                             if (orientation=="N"):
                                 g.append(draw.Rectangle(xplacement-dx0+x0 , -(height-(yplacement-dy0+y0)), rwidth, rheight, fill=color, fill_opacity=opacity , class_=met))
-                                g.append(draw.Text(pin, 20,xplacement-dx0+x0 ,-(height-(yplacement-dy0+y0)) , centre='origin'))
+                                g.append(draw.Text(pin, 20,xplacement-dx0+x0 ,-(height-(yplacement-dy0+y0)) , centre='origin', class_=met))
                             elif(orientation=="FN"):
                                 FNx= x0+((swidth/2 - x0)*2)- rwidth
                                 g.append(draw.Rectangle(xplacement - dx0 + FNx, -(height - (yplacement - dy0 + y0)), rwidth,rheight, fill=color, fill_opacity=opacity, class_=met))
-                                g.append(draw.Text(pin, 20, xplacement - dx0 + FNx, -(height - (yplacement - dy0 + y0)), centre='origin'))
+                                g.append(draw.Text(pin, 20, xplacement - dx0 + FNx, -(height - (yplacement - dy0 + y0)), centre='origin', class_=met))
                             elif(orientation=="FS"):
                                 FSy=y0+((sheight/2 - y0)*2)- rheight
                                 g.append(draw.Rectangle(xplacement - dx0 + x0, -(height - (yplacement - dy0 + FSy)), rwidth,rheight, fill=color, fill_opacity=opacity, class_=met))
-                                g.append(draw.Text(pin, 20, xplacement - dx0 + x0, -(height - (yplacement - dy0 + FSy)), centre='origin'))
+                                g.append(draw.Text(pin, 20, xplacement - dx0 + x0, -(height - (yplacement - dy0 + FSy)), centre='origin', class_=met))
                             elif(orientation=="S"):
                                 Sx= x0+((swidth/2 - x0)*2)- rwidth
                                 Sy= y0+((sheight/2 - y0)*2)- rheight
                                 g.append(draw.Rectangle(xplacement - dx0 + Sx, -(height - (yplacement - dy0 + Sy)), rwidth,rheight, fill=color, fill_opacity=opacity, Class=met))
-                                g.append(draw.Text(pin, 35, xplacement - dx0 + Sx, -(height - (yplacement - dy0 + Sy)), centre='origin'))
+                                g.append(draw.Text(pin, 35, xplacement - dx0 + Sx, -(height - (yplacement - dy0 + Sy)), centre='origin', class_=met))
             d.append(g)
             k = k + 4
 
@@ -261,7 +261,7 @@ def toSVG(read_path,path):
             PINS = pin_name.replace('<', '')
             PINS = PINS.replace('>', '')
             d.append(draw.Rectangle(pin_pos1 - dx0 , -(height - (pin_pos2- dy0)), pinx1-pinx0, piny1-piny0, fill='#B1725A',fill_opacity=0.6,Class ="PIN",id=PINS))
-            d.append(draw.Text(pin_name, 40, pin_pos1- dx0 , -(height - (pin_pos2 - dy0 -20)), centre='origin'))
+            d.append(draw.Text(pin_name, 40, pin_pos1- dx0 , -(height - (pin_pos2 - dy0 -20)), centre='origin',Class ="PINNames"))
 
 
 

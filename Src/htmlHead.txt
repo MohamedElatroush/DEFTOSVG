@@ -21,48 +21,43 @@
                         <label for="selectItems" class="col-sm-3 control-label">Select Items to be hidden</label>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="metal1">
+                            <input type="checkbox" class="" name="acc_type" id="metal1" >
                             <label for="details">Metal 1</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="metal2">
+                            <input type="checkbox" class="" name="acc_type" id="metal2" >
                             <label for="details">Metal 2</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="metal3">
+                            <input type="checkbox" class="" name="acc_type" id="metal3" >
                             <label for="details">Metal 3</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="metal4">
+                            <input type="checkbox" class="" name="acc_type" id="metal4" >
                             <label for="details">Metal 4</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="via1" onclick="toggleBoxVisibility('via1')">
+                            <input type="checkbox" class="" name="acc_type" id="via1" >
                             <label for="details">Via 1</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="via2" onclick="toggleBoxVisibility('via2')">
+                            <input type="checkbox" class="" name="acc_type" id="via2" >
                             <label for="details">Via 2</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="via3" onclick="toggleBoxVisibility('via3')">
+                            <input type="checkbox" class="" name="acc_type" id="via3" >
                             <label for="details">Via 3</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="PIN" onclick="toggleBoxVisibility('PIN')">
+                            <input type="checkbox" class="" name="acc_type" id="PIN" >
                             <label for="details">Pin</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="OPS" onclick="toggleBoxVisibility('OPS')">
-                            <label for="details">Ops</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="details">Select Cell</label>
