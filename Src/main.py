@@ -275,8 +275,8 @@ def toSVG(read_path,path):
         Tail = file.read()
     with open("templates/"+SVG, 'r+') as f:
         content = f.read()
-        contentX = content.replace("13920", "500",1)
-        contentX = contentX.replace("15000", "500",1)
+        contentX = content.replace(str(height), "500",1)
+        contentX = contentX.replace(str(width), "500",1)
         f.seek(0, 0)
         f.write(Head+contentX+Tail)   
          
