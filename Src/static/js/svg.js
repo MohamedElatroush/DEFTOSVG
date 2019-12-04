@@ -20,6 +20,15 @@ $( document ).ready(function() {
      var svgElement = document.querySelector('#svgContainer');
      var panZoomTiger = svgPanZoom(svgElement,options);
 
+    $('.metal1').toggle();
+    $('.metal2').toggle();
+    $('.metal3').toggle();
+    $('.metal4').toggle();
+    $('.via1').toggle();
+    $('.via2').toggle();
+    $('.via3').toggle();
+    $('.PIN').toggle();
+    //$('.PINNames').toggle();
 
     //searchable list generation
     $( ".cell" ).each(function() {
@@ -36,10 +45,10 @@ $( document ).ready(function() {
 
 
     $('#selectCell').on('change', function() {
-            $("#" + $("#selectCell").val()).css({stroke:"#ffff00", "stroke-width":10});
+            $("#" + $("#selectCell").val()).css({fill:"#ffff00",fill_opacity:0.9});
             setTimeout(function afterTwoSeconds() {  
-                $("#" + $("#selectCell").val()).css({stroke:"#ffff00", "stroke-width":0});
-              }, 500)
+                $("#" + $("#selectCell").val()).css({fill:"#a877f2",fill_opacity:0.2});
+              }, 1000)
     });
 
     $('#selectNet').on('change', function() {
@@ -57,9 +66,6 @@ $( document ).ready(function() {
     });
     
 
-
-    
-    
     
     //hovering feature
     $('body').on('mouseover', '.cell', function() {
