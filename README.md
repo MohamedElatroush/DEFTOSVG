@@ -34,7 +34,6 @@ Now head over to http://127.0.0.1:5000/, the main web page should display.
 ## What is Left
 
 1. DRC Violations Highlighting
-2. Fixing Pages Navigation
 
 ## References
 
