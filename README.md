@@ -19,7 +19,7 @@ To run this website locally, clone the repo and run the server.py file in the sr
 ```
 python server.py
 ```
-Now head over to http://127.0.0.1:5000/, the main web page should display. 
+Now head over to your localhost, or http://127.0.0.1:5000/, the main web page should display. 
 
 ## What Has Been Done
 
