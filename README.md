@@ -41,5 +41,7 @@ Now head over to http://127.0.0.1:5000/, the main web page should display.
 ## References
 
 https://github.com/ariutta/svg-pan-zoom#svg-pan-zoom-library
+http://flask.palletsprojects.com/en/1.1.x/
+https://api.jquery.com/
 
 
