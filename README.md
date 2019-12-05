@@ -15,7 +15,7 @@
 
 
 ## How to Build and Run
-To run this website locally, clone the repo and run the server.py file using the command
+To run this website locally, clone the repo and run the server.py file in the src folder of the main directory using the command
 ```
 python server.py
 ```
