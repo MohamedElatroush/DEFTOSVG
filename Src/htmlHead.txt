@@ -55,11 +55,6 @@
                             <label for="details">Via 3</label>
                         </div>
                         <div class="col-sm-9">
-                            <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="PIN" >
-                            <label for="details">Pin</label>
-                        </div>
-                        <div class="col-sm-9">
                             <label for="details">Select Cell</label>
                             <select id="selectCell">
                                 <option value="None">None</option>
