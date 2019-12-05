@@ -27,7 +27,7 @@ $( document ).ready(function() {
     $('.via1').toggle();
     $('.via2').toggle();
     $('.via3').toggle();
-    $('.PIN').toggle();
+    //$('.PIN').toggle();
     //$('.PINNames').toggle();
 
     //searchable list generation
