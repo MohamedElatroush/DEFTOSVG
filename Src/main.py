@@ -123,7 +123,7 @@ def toSVG(read_path,path):
                             rwidth = x01 - x0                   #width of rectangle
                             rheight = y01 - y0                  #height of rectangle
                             if (orientation=="N"):
-                                g.append(draw.Rectangle(xplacement-dx0+x0 , -(height-(yplacement-dy0+y0)), rwidth, rheight, fill=color, fill_opacity=opacity , class_=met))
+                                g.append(draw.Rectangle(xplacement-dx0+x0 , -(height-(yplacement-dy0+y0)), rwidth, rheight, fill=color, fill_opacity=opacity , class_=met)) #adding a metal class metal to be used to group items with similar attributes
                                 g.append(draw.Text(pin, 20,xplacement-dx0+x0 ,-(height-(yplacement-dy0+y0)) , centre='origin', class_=met))
                             elif(orientation=="FN"):
                                 FNx= x0+((swidth/2 - x0)*2)- rwidth
@@ -219,7 +219,7 @@ def toSVG(read_path,path):
                     route_wirey0 = int(nets[temp + 2].strip("[],"))
                     route_wirex1 = int(nets[temp + 3].strip("[],"))
                     route_wirey1 = int(nets[temp + 4].strip("[],"))
-                    p = draw.Path(stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0, class_ = "net")
+                    p = draw.Path(stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0, class_ = "net") #creating class "nets" to be able to group them together to be easily used in JS
                     p.M(route_wirex0-dx0, -(height - (route_wirey0- dy0 )  ))                 # Start path at point
                     p.l(route_wirex1-route_wirex0 ,  route_wirey1-route_wirey0)                # Draw line to
                     d.append(p)
