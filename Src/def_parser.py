@@ -37,21 +37,20 @@ class DefParser:
         self.units = None
         self.scale = None
 
-    def parse(self):
+    def parse(self): #parsing the def file
         """
         Main method to parse the DEF file
         :return: void
         """
         print ("Start parsing DEF file...")
-        #print(self.stack)
         # open the file and start reading
-        f = open(self.file_path, "r+")
+        f = open(self.file_path, "r+") #opening the def file
 
         # the program will run until the end of file f
         for line in f:
             # split the string by the plus '+' sign
 
-            parts = split_plus(line)
+            parts = split_plus(line) #removing the + sign
             for each_part in parts:
 
                 # split each sub-string by space
@@ -65,25 +64,25 @@ class DefParser:
                         self.stack.append(new_pins)
 
                          #print (new_pins.type)
-                    elif info[0] == "VERSION":
+                    elif info[0] == "VERSION": #getting the version
                         self.version = info[1]
 
                     elif info[0] == "DIVIDERCHAR":
                         self.dividerchar = info[1]
 
-                    elif info[0] == "BUSBITCHARS":
+                    elif info[0] == "BUSBITCHARS": #indicating if the busbitchars is enabled or not
                         self.busbitchars = info[1]
                     elif info[0] == "DESIGN" and len(info) <= 3:
                         # differentiate with the DESIGN statement inside
                         # PROPERTYDEFINITIONS section.
                         self.design_name = info[1]
-                    elif info[0] == "UNITS":
+                    elif info[0] == "UNITS": #getting the units section
                         self.units = info[2]
                         self.scale = info[3]
-                    elif info[0] == "PROPERTYDEFINITIONS":
+                    elif info[0] == "PROPERTYDEFINITIONS": 
                         new_property = Property()
                         self.stack.append(new_property)
-                    elif info[0] == "DIEAREA":
+                    elif info[0] == "DIEAREA": #getting the die area
                         info_split = split_parentheses(info)
                         pt1 = (int(info_split[1][0]), int(info_split[1][1]))
                         pt2 = (int(info_split[2][0]), int(info_split[2][1]))
