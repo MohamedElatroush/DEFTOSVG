@@ -1,39 +1,13 @@
 <!doctype html>
 
 <head>
-    <script src="jquery-3.4.1.min.js"></script>
-    <script src="svgZoomPan.js"></script>
-    <script src="jquery.js"></script>
-    <script src="svg.js"></script>        
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/svgZoomPan.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/svg.js') }}"></script> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">  
 </head>
 
-<style>
-    body {
-        background: url(background.jpg) repeat 0 0; 
-        background-size: cover;
-    }
 
-    *[role="form"] {
-        max-width: 530px;
-        padding: 15px;
-        margin: 0 auto; 
-        margin-top: 10%;
-        margin-bottom: 10%;
-        border-radius: 0.3em;
-        background-color: #f2f2f2;
-    }
-
-    *[role="form"] h2 { 
-        font-family: 'Open Sans' , sans-serif;
-        font-size: 40px;
-        font-weight: 600;
-        color: #000000;
-        margin-top: 5%;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-    }
-</style>
 
 <html>
     <!-- All the files that are required -->
@@ -44,62 +18,58 @@
             <div class="login-form-1">
                 <form id="login-form" class="text-left">
                     <div class="form-group login-group-checkbox">
-                        <label for="selectItems" class="col-sm-3 control-label">Select Items to be shown</label>
+                        <label for="selectItems" class="col-sm-3 control-label">Select Items to be hidden</label>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="metal1">
+                            <input type="checkbox" class="" name="acc_type" id="metal1" >
                             <label for="details">Metal 1</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="metal2">
+                            <input type="checkbox" class="" name="acc_type" id="metal2" >
                             <label for="details">Metal 2</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="metal3">
+                            <input type="checkbox" class="" name="acc_type" id="metal3" >
                             <label for="details">Metal 3</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="metal4">
+                            <input type="checkbox" class="" name="acc_type" id="metal4" >
                             <label for="details">Metal 4</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="via1" onclick="toggleBoxVisibility('via1')">
+                            <input type="checkbox" class="" name="acc_type" id="via1" >
                             <label for="details">Via 1</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="via2" onclick="toggleBoxVisibility('via2')">
+                            <input type="checkbox" class="" name="acc_type" id="via2" >
                             <label for="details">Via 2</label>
                         </div>
                         <div class="col-sm-9">
                             <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="via3" onclick="toggleBoxVisibility('via3')">
+                            <input type="checkbox" class="" name="acc_type" id="via3" >
                             <label for="details">Via 3</label>
                         </div>
                         <div class="col-sm-9">
-                            <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="PIN" onclick="toggleBoxVisibility('PIN')">
-                            <label for="details">Pin</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <label for="space" class="col-sm-3 control-label"> </label>
-                            <input type="checkbox" class="" name="acc_type" id="OPS" onclick="toggleBoxVisibility('OPS')">
-                            <label for="details">Ops</label>
-                        </div>
-                        <div class="col-sm-9">
                             <label for="details">Select Cell</label>
-                            <select id="selectCell"></select>
+                            <select id="selectCell">
+                                <option value="None">None</option>
+                            </select>
                         </div>
                         <div class="col-sm-9">
                             <label for="details">Select Net</label>
-                            <select id="selectNet"></select>
+                            <select id="selectNet">
+                                <option value="None">None</option>
+                            </select>
                         </div>
                         <div class="col-sm-9">
                             <label for="details">Select Pin</label>
-                            <select id="selectPin"></select>
+                            <select id="selectPin">
+                                <option value="None">None</option>
+                            </select>
                         </div>
                         <h5 id='cellViewer'>View</h5>

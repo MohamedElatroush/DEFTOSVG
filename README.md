@@ -14,6 +14,13 @@
     • Highlight the areas that have DRC violations
 
 
+## How to Build and Run
+To run this website locally, clone the repo and run the server.py file in the src folder of the main directory using the command
+```
+python server.py
+```
+Now head over to your localhost, or http://127.0.0.1:5000/, the main web page should display. 
+
 ## What Has Been Done
 
 1. Python SVG Generation Function
@@ -26,11 +33,15 @@
 
 ## What is Left
 
-1. DRC Violations Highlighting
-2. Fixing Pages Navigation
+1. Enhancing Pins Highlighting
+2. Searchable Nets Generation
+3. DRC Violations Highlighting
+
 
 ## References
 
-https://github.com/ariutta/svg-pan-zoom#svg-pan-zoom-library
+https://github.com/ariutta/svg-pan-zoom#svg-pan-zoom-library  
+http://flask.palletsprojects.com/en/1.1.x/  
+https://api.jquery.com/  
 
 
