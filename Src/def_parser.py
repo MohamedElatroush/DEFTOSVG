@@ -88,15 +88,15 @@ class DefParser:
                         pt2 = (int(info_split[2][0]), int(info_split[2][1]))
                         self.diearea = [pt1, pt2]
                         #print(self.diearea)
-                    elif info[0] == "COMPONENTS":
+                    elif info[0] == "COMPONENTS": #getting the components sections 
                         new_comps = Components(int(info[1]))
                         self.stack.append(new_comps)
 
-                    elif info[0] == "NETS":
+                    elif info[0] == "NETS": #getting the net section
                         new_nets = Nets(int(info[1]))
                         self.stack.append(new_nets)
 
-                    elif info[0] == "TRACKS":
+                    elif info[0] == "TRACKS": #getting the tracks info
                         new_tracks = Tracks(info[1])
                         new_tracks.pos = int(info[2])
                         new_tracks.do = int(info[4])
@@ -112,7 +112,7 @@ class DefParser:
                         new_gcellgrid.do = int(info[4])
                         new_gcellgrid.step = int(info[6])
                         self.gcellgrids.append(new_gcellgrid)
-                    elif info[0] == "ROW":
+                    elif info[0] == "ROW": #getting the rows and their numbers
                         new_row = Row(info[1])
                         new_row.site = info[2]
                         new_row.pos = (int(info[3]), int(info[4]))
@@ -124,7 +124,7 @@ class DefParser:
                         #for i in range(0, len(self.stack)):
                         #    print( new_row.site)
 
-                    elif info[0] == "END":
+                    elif info[0] == "END": #checking if we reached the end
                         if len(self.stack) > 0:
                             self.sections.append(self.stack.pop())
                          #print ("finish")
@@ -138,14 +138,14 @@ class DefParser:
 
         # put the elements in sections list into separate variables
         for sec in self.sections:
-            if sec.type == "PROPERTY_DEF":
+            if sec.type == "PROPERTY_DEF": #making list for properties 
                 self.property = sec
-            elif sec.type == "COMPONENTS_DEF":
+            elif sec.type == "COMPONENTS_DEF": #making list for components 
                 self.components = sec
-            elif sec.type == "PINS_DEF":
+            elif sec.type == "PINS_DEF": #making list for pins 
                 self.pins = sec
 
-            elif sec.type == "NETS_DEF":
+            elif sec.type == "NETS_DEF": #making list for nets 
                 self.nets = sec
         print ("Parsing DEF file done.\n")
         #print(self.property)
