@@ -13,6 +13,11 @@ class DRC_parser:
         # f = open(self.file_path,"r")
         # x = f.readlines()
         # print(x)
-        with open(self.file_path) as f:
-            lines = f.read().splitlines()
+        with open(self.file_path,'r') as f:
+            data = f.read().replace('\n', '')
+        x=data.split()
+        for i in range(0,len(x)):
+            if "-" in x:
+                x.remove("-")
 
+       
