@@ -3,10 +3,16 @@ class DRC_parser:
     def __init__(self, DRC_file):
         self.file_path = DRC_file
         self.violation_type = None
-        self.dimensions = None
+        self.x1 = None
+        self.x2 = None
+        self.y1 = None
+        self.y2 = None
 
 
     def DRC_parser(self):
-        f = open(self.file_path,"r")
-        x = f.readlines()
-        print(x)
+        # f = open(self.file_path,"r")
+        # x = f.readlines()
+        # print(x)
+        with open(self.file_path) as f:
+            lines = f.read().splitlines()
+
