@@ -79,7 +79,7 @@ def toSVG(read_path,path):
     for i in range(0, len(MACRO)):                                    #for loop for drawing of components
 
         if k < len(MACRO):
-            g = draw.Group(fill="white")
+            g = draw.Group()
             for j in range(0, len(lef_info)):                        #loop on th size of the block in the LEF file on details of a macro
                 if MACRO[k] ==lef_info[j]:                           #Matching macros from LEF / DEF
                     counter = counter+1
@@ -93,7 +93,7 @@ def toSVG(read_path,path):
                         if (lef_info[m]=="Size"):
                             swidth= float(lef_info[m+1]) *100                   #width size of macro
                             sheight=float(lef_info[m+2]) *100                   #height width size of macrp
-                            d.append(draw.Rectangle(xplacement - dx0, -(height - (yplacement - dy0 )), swidth, sheight,fill='#a877f2', stroke='#412f5c',stroke_width=10, fill_opacity=0.2, class_="cell", id=MACRO[k] + "_c" + str(counter)))
+                            d.append(draw.Rectangle(xplacement - dx0, -(height - (yplacement - dy0 )), swidth, sheight,fill='#a877f2', stroke='#412f5c',stroke_width=10, fill_opacity=0.2, class_="cell", name=MACRO[k], id=MACRO[k] + "_c" + str(counter)))
                         elif(lef_info[m]=="Layer:" or lef_info[m]=="Layer" or lef_info[m]=="LAYER" ):            #Layer
                             met = lef_info[m + 1]
                             if (lef_info[m+1]=="metal1"):
@@ -182,7 +182,7 @@ def toSVG(read_path,path):
                     y01 = float(lef_info[n + 4]) * 100
                     rwidth = x01 - x0                       # width of rectangle
                     rheight = y01 - y0                      # height of rectangle
-                    d.append(draw.Rectangle(nx - dx0 + x0, -(height - (ny - dy0 + y0)), rwidth, rheight,fill=color, fill_opacity=opacity))
+                    d.append(draw.Rectangle(nx - dx0 + x0, -(height - (ny - dy0 + y0)), rwidth, rheight,fill=color, fill_opacity=opacity, class_= lef_info[n+1]))
 
     i=0
     RouteEnd=0
@@ -220,7 +220,7 @@ def toSVG(read_path,path):
                     route_wirey0 = int(nets[temp + 2].strip("[],"))
                     route_wirex1 = int(nets[temp + 3].strip("[],"))
                     route_wirey1 = int(nets[temp + 4].strip("[],"))
-                    p = draw.Path(stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0, class_ = "net", ID = nets[j])
+                    p = draw.Path(stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0, class_ = "net", id = nets[j])
                     p.M(route_wirex0-dx0, -(height - (route_wirey0- dy0 )  ))                 # Start path at point
                     p.l(route_wirex1-route_wirex0 ,  route_wirey1-route_wirey0)                # Draw line to
                     d.append(p)
@@ -261,16 +261,16 @@ def toSVG(read_path,path):
             pin_name=pin_info[b-1]
             PINS = pin_name.replace('<', '')
             PINS = PINS.replace('>', '')
-            d.append(draw.Rectangle(pin_pos1 - dx0 , -(height - (pin_pos2- dy0)), pinx1-pinx0, piny1-piny0, fill='#B1725A',fill_opacity=0.6,Class ="PIN",id=PINS))
+            d.append(draw.Rectangle(pin_pos1 - dx0 , -(height - (pin_pos2- dy0)), pinx1-pinx0+200, piny1-piny0+200, fill='#B1725A',fill_opacity=0.6,Class ="PIN",id=PINS))
             d.append(draw.Text(pin_name, 40, pin_pos1- dx0 , -(height - (pin_pos2 - dy0 -20)), centre='origin',Class ="PINNames"))
 
 
+    '''
+        read_path = input("Enter DRC file path: ") #ENTER DRC FILE PATH HERE!
+        drc_parser=DRC_parser(read_path)
+        drc_parser.DRC_parser()
 
-    read_path = input("Enter DRC file path: ") #ENTER DRC FILE PATH HERE!
-    drc_parser=DRC_parser(read_path)
-    drc_parser.DRC_parser()
-
-
+    '''
 
 
 
@@ -284,8 +284,8 @@ def toSVG(read_path,path):
         Tail = file.read()
     with open("templates/"+SVG, 'r+') as f:
         content = f.read()
-        contentX = content.replace(str(height), "500",1)
-        contentX = contentX.replace(str(width), "500",1)
+        contentX = content.replace(str(height), "950",1)
+        contentX = contentX.replace(str(width), "950",1)
         f.seek(0, 0)
         f.write(Head+contentX+Tail)   
          

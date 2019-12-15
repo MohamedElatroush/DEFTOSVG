@@ -32,6 +32,11 @@ $( document ).ready(function() {
 
     //searchable list generation
     $( ".cell" ).each(function() {
+        if($("#selectCellType option[value="+$(this).attr('name')+"]").length <= 0)
+            $("#selectCellType").append(new Option($(this).attr('name'), $(this).attr('name')));
+    });
+
+    $( ".cell" ).each(function() {
         $("#selectCell").append(new Option($(this).attr('id'), $(this).attr('id')));
     });
     
@@ -43,26 +48,42 @@ $( document ).ready(function() {
         $("#selectPin").append(new Option($(this).attr('id'), $(this).attr('id')));
     });
 
+    $("#selectCellType").select2();
+    $("#selectCell").select2();
+    $("#selectNet").select2();
+    $("#selectPin").select2();
+
+    $('#selectCellType').on('change', function() {
+        if($("#selectCell").val()=="None")
+        {
+            $(".cell").css({fill:"#a877f2",fill_opacity:0.2,stroke_width:10});
+        }
+        $("rect[name="+$("#selectCellType").val()+"]").css({fill:"#ffff00",fill_opacity:1,stroke_width:20});
+    });
+
 
     $('#selectCell').on('change', function() {
-            $("#" + $("#selectCell").val()).css({fill:"#ffff00",fill_opacity:0.9});
-            setTimeout(function afterTwoSeconds() {  
-                $("#" + $("#selectCell").val()).css({fill:"#a877f2",fill_opacity:0.2});
-              }, 1000)
+            if($("#selectCell").val()=="None")
+            {
+                $(".cell").css({fill:"#a877f2",fill_opacity:0.2,stroke_width:10});
+            }
+            $("#" + $("#selectCell").val()).css({fill:"#ffff00",fill_opacity:1,stroke_width:20});
     });
 
     $('#selectNet').on('change', function() {
+        if($("#selectNet").val()=="None")
+        {
+            $(".net").css({stroke:"#ffff00", "stroke-width":0});
+        }
         $("#" + $("#selectNet").val()).css({stroke:"#ffff00", "stroke-width":10});
-        setTimeout(function afterTwoSeconds() {  
-            $("#" + $("#selectNet").val()).css({stroke:"#ffff00", "stroke-width":0});
-          }, 500)
     });
 
     $('#selectPin').on('change', function() {
-        $("#" + $("#selectPin").val()).css({stroke:"#ffff00", "stroke-width":10});
-        setTimeout(function afterTwoSeconds() {  
-            $("#" + $("#selectPin").val()).css({stroke:"#ffff00", "stroke-width":0});
-        }, 500)
+        if($("#selectPin").val()=="None")
+        {
+            $(".PIN").css({fill:'#B1725A'});
+        }
+        $("#" + $("#selectPin").val()).css({fill:"#ffff00"});
     });
     
 

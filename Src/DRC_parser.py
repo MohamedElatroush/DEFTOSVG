@@ -1,3 +1,5 @@
+#parsing the DRC file to get the locations of the SRC errors and highlight them so that the user can fix 
+#those probelms in his/her design 
 class DRC_parser:
 
     def __init__(self, DRC_file):
@@ -19,5 +21,3 @@ class DRC_parser:
         for i in range(0,len(x)):
             if "-" in x:
                 x.remove("-")
-
-       
