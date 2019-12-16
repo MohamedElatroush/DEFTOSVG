@@ -12,7 +12,7 @@ import os
 
 SCALE = 2000
 
-class LefParser:
+class LefParser: # parsing the lef file so we can draw it 
     """
     LefParser object will parse the LEF file and store information about the
     cell library.
