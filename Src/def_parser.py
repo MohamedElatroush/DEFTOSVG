@@ -272,15 +272,10 @@ if __name__ == '__main__':
     # for key, val in def_parser.nets.net_dict.items():
     #     f.write(str(key))
     #     f.write(str(val))
-
     #print(def_parser.diearea)
-
     #f.write(str(def_parser.components.comp_dict))
     #f.close()
-
     #print("here")
-
-
     #for each_pin in def_parser.pins.pins:
     #    print (each_pin)
 
