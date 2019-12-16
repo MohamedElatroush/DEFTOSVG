@@ -153,7 +153,7 @@ if __name__ == '__main__':
     for i in range(0,len(lef_info)):
         if lef_info[i] == "RECT":
             print(lef_info[i],lef_info[i+1],lef_info[i+2],lef_info[i+3],lef_info[i+4])
-
+#we donot need this part of the parser so we commented it 
         #if(row[])
             #print(line)
     #print(k)
