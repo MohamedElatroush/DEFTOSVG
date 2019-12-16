@@ -118,7 +118,9 @@ def toSVG(read_path,path):
                                 #COLOR CODE For each via3
                                 color = "#83FFE1"                       
                         elif ((lef_info[m]=="PIN:")):
+                            #metal info 
                             met = lef_info[m + 1]
+                            #pin info
                             pin = lef_info[m+1]                 #PIN NAME
                         elif ((lef_info[m] == "OBS")):          #setting different opacity for rectangles
                             met = lef_info[m + 1]
