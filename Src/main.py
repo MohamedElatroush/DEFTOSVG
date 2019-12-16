@@ -78,7 +78,7 @@ def toSVG(read_path,path):
 
     for i in range(0, len(MACRO)):                                    #for loop for drawing of components
 
-        if k < len(MACRO):
+        if k < len(MACRO): #if we still have macro we keep drawing
             g = draw.Group()
             for j in range(0, len(lef_info)):                        #loop on th size of the block in the LEF file on details of a macro
                 if MACRO[k] ==lef_info[j]:                           #Matching macros from LEF / DEF
