@@ -34,7 +34,7 @@ def toSVG(read_path,path):
 
     MACRO = macro.split() #DEF INFO CARRIER
     #print(MACRO)
-
+#getting the die area of the circuit 
     z = def_parser.diearea
 
     pos = re.split('[, ()]', str(z))
