@@ -87,7 +87,7 @@ class LefParser:
         print ("Parsing LEF file done.")
 
 
-def draw_cells():
+def draw_cells(): # drawing the cells after getting the necessary info from the lef file
     """
     code to draw cells based on LEF information.
     :return: void
