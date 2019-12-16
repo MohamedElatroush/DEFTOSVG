@@ -67,7 +67,7 @@ class DefParser:
                     elif info[0] == "VERSION": #getting the version
                         self.version = info[1]
 
-                    elif info[0] == "DIVIDERCHAR":
+                    elif info[0] == "DIVIDERCHAR": #getting the dividechar simpole 
                         self.dividerchar = info[1]
 
                     elif info[0] == "BUSBITCHARS": #indicating if the busbitchars is enabled or not
