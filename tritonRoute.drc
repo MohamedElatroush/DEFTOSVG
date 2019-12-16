@@ -1,0 +1,39 @@
+  violation type: 0
+    srcs: _04984_ _06208_ 
+    bbox = (352.01, 271.695) - (352.15, 271.835) on Layer met1
+  violation type: 0
+    srcs: _04984_ _06208_ 
+    bbox = (352.01, 271.695) - (352.15, 271.835) on Layer met1
+  violation type: 0
+    srcs: _04984_ _06208_ 
+    bbox = (352.01, 271.695) - (352.63, 271.835) on Layer met1
+  violation type: 0
+    srcs: _04984_ _06208_ 
+    bbox = (352.49, 271.695) - (352.63, 271.835) on Layer met1
+  violation type: 0
+    srcs: _04984_ _06208_ 
+    bbox = (352.01, 271.695) - (352.63, 271.835) on Layer met1
+  violation type: 0
+    srcs: _04984_ _06208_ 
+    bbox = (352.49, 271.695) - (352.63, 271.835) on Layer met1
+  violation type: 2
+    srcs: vram_din[7] 
+    bbox = (0.33, 33.515) - (0.483, 33.655) on Layer li1
+  violation type: 2
+    srcs: mapper_ppu_flags[14] 
+    bbox = (0.33, 169.175) - (0.483, 169.315) on Layer li1
+  violation type: 2
+    srcs: cycle[8] 
+    bbox = (0.33, 203.755) - (0.483, 203.895) on Layer li1
+  violation type: 2
+    srcs: cycle[5] 
+    bbox = (0.33, 237.005) - (0.483, 237.145) on Layer li1
+  violation type: 2
+    srcs: mapper_ppu_flags[9] 
+    bbox = (0.33, 441.825) - (0.483, 441.965) on Layer li1
+  violation type: 0
+    srcs: _09510_ sprite_ram.oam\[229\]\[7\] 
+    bbox = (300.17, 478.155) - (300.31, 478.295) on Layer met2
+  violation type: 0
+    srcs: _09510_ sprite_ram.oam\[229\]\[7\] 
+    bbox = (300.17, 478.155) - (300.31, 478.295) on Layer met2
