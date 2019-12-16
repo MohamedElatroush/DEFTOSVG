@@ -126,9 +126,13 @@ def toSVG(read_path,path):
                             met = lef_info[m + 1]
                             opacity = 0.6
                         elif ((lef_info[m]=="RECT")):           #extracting dimensions of rectangles in LEF
+                            #x left
                             x0 = float(lef_info[m+1]) * 100
+                            #y left
                             y0 = float(lef_info[m+2]) *100
+                            #x right
                             x01=float(lef_info[m+3])*100
+                            #y right 
                             y01= float(lef_info[m+4])*100
                             rwidth = x01 - x0                   #width of rectangle
                             rheight = y01 - y0                  #height of rectangle
