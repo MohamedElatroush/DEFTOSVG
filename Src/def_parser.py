@@ -235,7 +235,6 @@ if __name__ == '__main__':
     #     #y.split()
     #     #print(y)
     #     compon[x[3]]=y
-
     # z = def_parser.diearea
     #
     # # print(compon.keys())
@@ -258,7 +257,6 @@ if __name__ == '__main__':
     # # Display in iPython notebook
     # d.rasterize()  # Display as PNG
     # d  # Display as SVG
-
     #f.close()
     # f = open("pins.txt", "w")
     # for key, val in def_parser.pins.pin_dict.items():
