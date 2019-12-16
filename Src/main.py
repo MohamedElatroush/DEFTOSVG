@@ -134,7 +134,9 @@ def toSVG(read_path,path):
                             x01=float(lef_info[m+3])*100
                             #y right 
                             y01= float(lef_info[m+4])*100
+                            #width of the rects
                             rwidth = x01 - x0                   #width of rectangle
+                            #height of the rects 
                             rheight = y01 - y0                  #height of rectangle
                             if (orientation=="N"):
                                 g.append(draw.Rectangle(xplacement-dx0+x0 , -(height-(yplacement-dy0+y0)), rwidth, rheight, fill=color, fill_opacity=opacity , class_=met))
