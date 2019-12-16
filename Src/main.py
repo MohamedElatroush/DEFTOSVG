@@ -49,8 +49,8 @@ def toSVG(read_path,path):
     dx1 = int(x3)   #diearea coordinates in int
     dy1 = int(x4)   #diearea coordinates in int
 
-    width=int(x3)-int(x1)
-    height=int(x4)-int(x2)
+    width=int(x3)-int(x1) #getting the width of the are lower left - upper right
+    height=int(x4)-int(x2) #getting the hihgt of the are lower left - upper right
     clip = draw.ClipPath()
     d = draw.Drawing(width,height, origin=(0,- height), id="svgContainer")                        #drawing of diearea
     d.append(draw.Rectangle(dx0, -(height+dy0), width, height, fill='#D8FEEA', fill_opacity=0.4,))
