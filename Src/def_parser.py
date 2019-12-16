@@ -15,7 +15,6 @@ class DefParser:
     """
     DefParser will parse a DEF file and store related information of the design.
     """
-
     def __init__(self, def_file):
         self.file_path = def_file
         # can make the stack to be an object if needed
