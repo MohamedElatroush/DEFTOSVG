@@ -286,10 +286,4 @@ if __name__ == '__main__':
 
      #print(def_parser.to_def_format())
 
-    # test macro and via (note: only via1)
-    # macro_dict = macro_and_via1(def_parser)
-    # for comp in macro_dict:
-    #     print (comp)
-    #     for pin in macro_dict[comp]:
-    #         print ("    " + pin + ": " + str(macro_dict[comp][pin]))
-    #     print ()
+
