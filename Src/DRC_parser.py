@@ -9,6 +9,7 @@ class DRC_parser:
         self.x2 = None
         self.y1 = None
         self.y2 = None
+        self.drc_list = []
 
 
     def DRC_parser(self):
@@ -25,7 +26,9 @@ class DRC_parser:
         print(x)
 
         for i in range(0,len(x)):
-            if (x[i]=="bbox"):
+            if (x[i] == "srcs:"):
+                self.drc_list.append(x[i+1] + x[i+2])
+            if (x[i]=="bbox"): #contains x0,y0 and x1,y1
                 self.x1 = x[i+2]
                 self.y1 = x[i+3]
                 self.x2 = x[i+4]
@@ -33,13 +36,13 @@ class DRC_parser:
 
                 self.x1 = self.x1.replace('(','')
                 self.x1 = self.x1.replace(',','')
+                self.y1 = self.y1.replace(')','')
+                self.x2 = self.x2.replace('(', '')
+                self.x2 = self.x2.replace(',', '')
+                self.y2 = self.y2.replace(')', '')
 
-                print(self.x1)
-                print(self.y1)
-                print(self.x2)
-                print(self.y2)
 
-        # self.x1 = x[]
 
 drc_parser=DRC_parser("tritonRoute.drc")
 drc_parser.DRC_parser()
+
