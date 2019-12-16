@@ -77,7 +77,7 @@ def toSVG(read_path, path,path2):
 
         if k < len(MACRO):  # if we still have macro we keep drawing
             g = draw.Group()
-            for j in range(0, len(lef_info)):  # loop on th size of the block in the LEF file on details of a macro
+            for j in range(0, len(lef_info),2):  # loop on th size of the block in the LEF file on details of a macro
                 if MACRO[k] == lef_info[j]:  # Matching macros from LEF / DEF
                     counter = counter + 1
                     # print(MACRO[k])
@@ -229,6 +229,8 @@ def toSVG(read_path, path,path2):
         if (nets[i]=="NET_DEF:"):
             net_ident=nets[i+1]
             #g = draw.Group(fill="Black", Class="net", id=net_ident)
+            net_ident = net_ident.replace('<', '')
+            net_ident = net_ident.replace('>', '')
             g = draw.Group(fill="Black", Class="net", id=net_ident)
 
         if (nets[i] == "metal1" or nets[i] == "metal2" or nets[i] == "metal3" or nets[i] == "metal4" or nets[i]=="via1" or nets[i]=="via2"or nets[i]=="via3"):
