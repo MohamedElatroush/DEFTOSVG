@@ -190,7 +190,7 @@ class DefParser:
         nets = def_parser.sections[3]
         s += nets.to_def_format()
         return s
-
+#printing new def file according to what we parsed and the info we got 
     def write_def(self, new_def, back_end=True, front_end=True):
         """
         Write a new def file based on the information in the DefParser object.
