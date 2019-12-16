@@ -57,9 +57,9 @@ def toSVG(read_path,path):
 
 
 
+ #parsing the lef file
 
-
-    lef_parser = LefParser(path)
+    lef_parser = LefParser(path) #getting the lef file path
     lef_parser.parse()
 
 
