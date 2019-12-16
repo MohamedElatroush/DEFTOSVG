@@ -41,7 +41,7 @@ $( document ).ready(function() {
     });
     
     $( ".net" ).each(function() {
-        $("#selectNet").append(new Option($(this).attr('id'), $(this).attr('id')));
+            $("#selectNet").append(new Option($(this).attr('id'), $(this).attr('id')));
     });
     
     $( ".PIN" ).each(function() {
@@ -54,7 +54,7 @@ $( document ).ready(function() {
     $("#selectPin").select2();
 
     $('#selectCellType').on('change', function() {
-        if($("#selectCell").val()=="None")
+        if($("#selectCellType").val()=="None")
         {
             $(".cell").css({fill:"#a877f2",fill_opacity:0.2,stroke_width:10});
         }
@@ -67,7 +67,7 @@ $( document ).ready(function() {
             {
                 $(".cell").css({fill:"#a877f2",fill_opacity:0.2,stroke_width:10});
             }
-            $("#" + $("#selectCell").val()).css({fill:"#ffff00",fill_opacity:1,stroke_width:20});
+            $("#" + $("#selectCell").val()).css({fill:"#ffff00",fill_opacity:2,stroke_width:20});
     });
 
     $('#selectNet').on('change', function() {
@@ -97,6 +97,49 @@ $( document ).ready(function() {
     $('body').on('change', 'input[type="checkbox"]', function(){
         var c = $(this).attr('id');
         $('.'+ c).toggle();
+    });
+
+
+    //changing layers color feature
+    $('#metal1Color').change(function(){ 
+        $('.metal1').css('fill', $(this).val());
+    });
+    $('#metal2Color').change(function(){ 
+        $('.metal2').css('fill', $(this).val());
+    });
+    $('#metal3Color').change(function(){ 
+        $('.metal3').css('fill', $(this).val());
+    });
+    $('#metal4Color').change(function(){ 
+        $('.metal4').css('fill', $(this).val());
+    });
+    $('#via1Color').change(function(){ 
+        $('.via1').css('fill', $(this).val());
+    });
+    $('#via2Color').change(function(){ 
+        $('.via2').css('fill', $(this).val());
+    }); 
+    $('#via3Color').change(function(){ 
+        $('.via3').css('fill', $(this).val());
+    }); 
+
+    //reset button to reset colors
+    $('#reset').click(function() {
+        $('#metal1Color').val("#7D5AB1");
+        $('#metal2Color').val("#8C8E8E");
+        $('#metal3Color').val("#FF839D");
+        $('#metal4Color').val("#83C9FF");
+        $('#via1Color').val("#83FFC3");
+        $('#via2Color').val("#FFD683");
+        $('#via3Color').val("#83FFE1");
+
+        $('.metal1').css('fill', "#7D5AB1");
+        $('.metal2').css('fill', "#8C8E8E");
+        $('.metal3').css('fill', "#FF839D");
+        $('.metal4').css('fill', "#83C9FF");
+        $('.via1').css('fill', "#83FFC3");
+        $('.via2').css('fill', "#FFD683");
+        $('.via3').css('fill', "#83FFE1");
     });
 });
 
