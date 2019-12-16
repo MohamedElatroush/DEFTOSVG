@@ -21,5 +21,3 @@ class DRC_parser:
         for i in range(0,len(x)):
             if "-" in x:
                 x.remove("-")
-
-       
