@@ -44,10 +44,10 @@ def toSVG(read_path,path):
     x3 = pos[7]
     x4 = pos[9]
 
-    dx0 = int(x1)    #diearea coordinates in int
-    dy0 = int(x2)
-    dx1 = int(x3)
-    dy1 = int(x4)
+    dx0 = int(x1)   #diearea coordinates in int
+    dy0 = int(x2)   #diearea coordinates in int
+    dx1 = int(x3)   #diearea coordinates in int
+    dy1 = int(x4)   #diearea coordinates in int
 
     width=int(x3)-int(x1)
     height=int(x4)-int(x2)
