@@ -109,7 +109,7 @@ def toSVG(read_path,path):
                             elif (lef_info[m + 1] == "via2"):
                                 color = "#FFD683"                       #COLOR CODE For each via2
                             elif (lef_info[m + 1] == "via3"):
-                                color = "#83FFE1"
+                                color = "#83FFE1"                       #COLOR CODE For each via3
                         elif ((lef_info[m]=="PIN:")):
                             met = lef_info[m + 1]
                             pin = lef_info[m+1]                 #PIN NAME
