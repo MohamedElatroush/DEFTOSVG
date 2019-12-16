@@ -260,14 +260,11 @@ if __name__ == '__main__':
     # d  # Display as SVG
 
     #f.close()
-
     # f = open("pins.txt", "w")
     # for key, val in def_parser.pins.pin_dict.items():
     #     f.write(str(key))
     #     f.write(str(val))
-
     #f.close()
-
     # f = open("nets.txt", "w")
     # for key, val in def_parser.nets.net_dict.items():
     #     f.write(str(key))
