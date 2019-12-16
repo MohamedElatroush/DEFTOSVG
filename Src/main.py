@@ -16,7 +16,7 @@ def toSVG(read_path,path):
 
 
 ####################
-
+# parsing the def file
     def_parser = DefParser(read_path)
     def_parser.parse()
     macro=""
@@ -28,7 +28,7 @@ def toSVG(read_path,path):
         nets += str(val).split()
     # print(nets)
 
-    def_scale = def_parser.scale
+    def_scale = def_parser.scale #scalling the def 
     #print("DEF scale: ",def_scale)
 
 
