@@ -26,30 +26,38 @@
                             <label for="space" class="col-sm-3 control-label"> </label>
                             <input type="checkbox" class="" name="acc_type" id="metal1" >
                             <label for="details">Metal 1</label>
+                            <input type="color" id="metal1Color" name="head" value="#7D5AB1">
                         
                             <label for="space" class="col-sm-3 control-label"> </label>
                             <input type="checkbox" class="" name="acc_type" id="metal2" >
                             <label for="details">Metal 2</label>
+                            <input type="color" id="metal2Color" name="head" value="#8C8E8E">
                         
                             <label for="space" class="col-sm-3 control-label"> </label>
                             <input type="checkbox" class="" name="acc_type" id="metal3" >
                             <label for="details">Metal 3</label>
+                            <input type="color" id="metal3Color" name="head" value="#FF839D">
                         
                             <label for="space" class="col-sm-3 control-label"> </label>
                             <input type="checkbox" class="" name="acc_type" id="metal4" >
                             <label for="details">Metal 4</label>
+                            <input type="color" id="metal4Color" name="head" value="#83C9FF">
                         
                             <label for="space" class="col-sm-3 control-label"> </label>
                             <input type="checkbox" class="" name="acc_type" id="via1" >
                             <label for="details">Via 1</label>
+                            <input type="color" id="via1Color" name="head" value="#83FFC3">
                         
                             <label for="space" class="col-sm-3 control-label"> </label>
                             <input type="checkbox" class="" name="acc_type" id="via2" >
                             <label for="details">Via 2</label>
+                            <input type="color" id="via2Color" name="head" value="#FFD683">
                         
                             <label for="space" class="col-sm-3 control-label"> </label>
                             <input type="checkbox" class="" name="acc_type" id="via3" >
                             <label for="details">Via 3</label>
+                            <input type="color" id="via3Color" name="head" value="#83FFE1">
+                            <button type="button" class="btn btn-primary" id="reset">RESET</button>
                         </div>
                         <br>
                         <div class="col-sm-9">
