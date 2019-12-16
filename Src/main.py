@@ -109,7 +109,8 @@ def toSVG(read_path,path):
                                 #COLOR CODE For each meta4
                                 color = "#83C9FF"                       
                             elif(lef_info[m+1]=="via1"):
-                                color= "#83FFC3"                        #COLOR CODE For each via1
+                                #COLOR CODE For each via1
+                                color= "#83FFC3"                        
                             elif (lef_info[m + 1] == "via2"):
                                 color = "#FFD683"                       #COLOR CODE For each via2
                             elif (lef_info[m + 1] == "via3"):
