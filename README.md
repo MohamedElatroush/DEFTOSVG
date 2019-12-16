@@ -21,22 +21,25 @@ python server.py
 ```
 Now head over to your localhost, or http://127.0.0.1:5000/, the main web page should display. 
 
-## What Has Been Done
+## Dependencies
+Flask  
+drawSvg  
+Regular Expression Operations (regex)  
+Lef_parser  
+Def_parser  
+Lef_util  
+Def_util  
 
-1. Python SVG Generation Function
-2. Flask Backend Handling
-3. Zooming and Panning Feature
-4. Cell Name Display on Hovering
-5. Layers Enabling List of Checkboxes
-6. Searchable Lists Generation
-7. Searched Element Highlighting
+## Limitations
+Slower response with enabling layers when circuit size gets higher
 
-## What is Left
+## Future Work
+Enhancing GUI and response time with large circuits  
+Developing a built-in DRC violations generator  
+Adding animations, styles, and stripples  
 
-1. Enhancing Pins Highlighting
-2. Searchable Nets Generation
-3. DRC Violations Highlighting
-
+## Acknowledgement
+We would like to express our very great appreciation to The American University in Cairo (AUC) for its continuous support, and the Digital Design II Course, under the supervision of Professor Mohamed Shalan.
 
 ## References
 
