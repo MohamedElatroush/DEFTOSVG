@@ -26,20 +26,42 @@ class DRC_parser:
         print(x)
 
         for i in range(0,len(x)):
-            if (x[i] == "srcs:"):
+            if (x[i] == "type:"):
+                if(x[i+1]== 0):
+                    color = "#FF0000"
+                    self.drc_list.append("color:")
+                    self.drc_list.append(color)
+                if(x[i+1]== 2):
+                    color = "#FFC500"
+                    self.drc_list.append("color:")
+                    self.drc_list.append(color)
+
+            elif (x[i] == "srcs:"):
+                self.drc_list.append("source:")
                 self.drc_list.append(x[i+1] + x[i+2])
-            if (x[i]=="bbox"): #contains x0,y0 and x1,y1
+            elif (x[i]=="bbox"): #contains x0,y0 and x1,y1
                 self.x1 = x[i+2]
                 self.y1 = x[i+3]
                 self.x2 = x[i+4]
                 self.y2 = x[i+5]
-
                 self.x1 = self.x1.replace('(','')
                 self.x1 = self.x1.replace(',','')
                 self.y1 = self.y1.replace(')','')
                 self.x2 = self.x2.replace('(', '')
                 self.x2 = self.x2.replace(',', '')
                 self.y2 = self.y2.replace(')', '')
+
+                self.drc_list.append("dimensions:")
+                self.drc_list.append(self.x1)
+                self.drc_list.append(self.y1)
+                self.drc_list.append(self.x2)
+                self.drc_list.append(self.y2)
+        
+
+        print(self.drc_list)
+
+
+
 
 
 
