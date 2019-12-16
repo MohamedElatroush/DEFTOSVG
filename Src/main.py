@@ -204,19 +204,26 @@ def toSVG(read_path,path):
     RouteStart=0
 
     for i in range(0,len(nets)):
+        #checking that am at metal components
         if (nets[i]== "metal1" or nets[i]== "metal2" or nets[i]== "metal3" or nets[i]== "metal4"):
             RouteStart=i
             if (nets[i] == "metal1"):
                 color = "#7D5AB1"           # COLOR CODE For each metal
                 strokewidth=0.6*100         #width of metal
             elif (nets[i] == "metal2"):
+                 # COLOR CODE For each meta2
                 color = "#8C8E8E"
+                #width of meta2
                 strokewidth = 0.6 * 100
             elif (nets[i]== "metal3"):
+                # COLOR CODE For each meta3
                 color = "#FF839D"
+                #width of meta3
                 strokewidth = 0.6 * 100
             elif (nets[i]== "metal4"):
+                # COLOR CODE For each meta4
                 color = "#83C9FF"
+                #width of meta4
                 strokewidth = 1.2 * 100
 
 
