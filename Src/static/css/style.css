@@ -14,7 +14,7 @@ body {
 }
 
 *[role="form"] h2 { 
-    font-family: 'Open Sans' , sans-serif;
+    font-family: 'Roboto' , sans-serif;
     font-size: 40px;
     font-weight: 600;
     color: red;
@@ -22,4 +22,15 @@ body {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 4px;
+}
+
+html,body,h1,h2,h3,h4,h5,h6,label,input {font-family: "Roboto", sans-serif}
+
+#reset {
+    height: 28px;
+    padding-top: 7px;
+    width: 66px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+    margin-left: 6px;
 }
