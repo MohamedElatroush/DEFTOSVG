@@ -24,5 +24,12 @@ class DRC_parser:
         print(x)
 
         for i in range(0,len(x)):
+            if (x[i]=="bbox"):
+                self.x1 = x[i+2]
+                self.y1 = x[i+3]
+                self.x2 = x[i+4]
+                self.y2 = x[i+5]
+
+                print(self.x1)
         # self.x1 = x[]
 
