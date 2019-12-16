@@ -39,9 +39,13 @@ def toSVG(read_path,path):
 
     pos = re.split('[, ()]', str(z))
 
+    #diearea coordinates in string
     x1 = pos[1]
+    #diearea coordinates in string
     x2 = pos[3]
+    #diearea coordinates in string
     x3 = pos[7]
+    #diearea coordinates in string
     x4 = pos[9]
 
     dx0 = int(x1)   #diearea coordinates in int
@@ -179,21 +183,31 @@ def toSVG(read_path,path):
                     if (lef_info[n+1] == "metal1"):
                         color = "#7D5AB1"   # COLOR CODE For each metal
                     elif (lef_info[n+1] == "metal2"):
+                        # COLOR CODE For each meta2
                         color = "#8C8E8E"
                     elif (lef_info[n+1] == "metal3"):
+                        # COLOR CODE For each meta3
                         color = "#FF839D"
                     elif (lef_info[n+1] == "metal4"):
+                        # COLOR CODE For each meta4
                         color = "#83C9FF"
                     elif (lef_info[n+1] == "via1"):
+                        # COLOR CODE For each via1
                         color = "#83FFC3"
                     elif (lef_info[n+1] == "via2"):
+                        # COLOR CODE For each via2
                         color = "#FFD683"
                     elif (lef_info[n+1] == "via3"):
+                        # COLOR CODE For each via3
                         color = "#83FFE1"
-                elif ((lef_info[n] == "RECT")):              # extracting dimensions of rectangles in LEF
+                elif ((lef_info[n] == "RECT")):              # extracting dimensions of rectangles in 
+                    #x left
                     x0 = float(lef_info[n + 1]) * 100
+                    #y left
                     y0 = float(lef_info[n + 2]) * 100
+                    #xright
                     x01 = float(lef_info[n + 3]) * 100
+                    #y right
                     y01 = float(lef_info[n + 4]) * 100
                     rwidth = x01 - x0                       # width of rectangle
                     rheight = y01 - y0                      # height of rectangle
