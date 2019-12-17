@@ -231,7 +231,7 @@ def toSVG(read_path, path,path2):
             #g = draw.Group(fill="Black", Class="net", id=net_ident)
             net_ident = net_ident.replace('<', '')
             net_ident = net_ident.replace('>', '')
-            g = draw.Group()
+            g = draw.Group(class_="net",id = net_ident)
 
         if (nets[i] == "metal1" or nets[i] == "metal2" or nets[i] == "metal3" or nets[i] == "metal4" or nets[i]=="via1" or nets[i]=="via2"or nets[i]=="via3"):
             RouteStart = i
@@ -293,7 +293,7 @@ def toSVG(read_path, path,path2):
                     route_wirey1 = int(nets[temp + 4].strip("[],"))
                     rw =route_wirex1-route_wirex0
                     rh = route_wirey1-route_wirey0
-                    p = draw.Path(stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0)
+                    p = draw.Path(stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0.7, id = net_ident)
                    # d.append(draw.Lines(route_wirex0,route_wirey1,stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0))
                     p.M(route_wirex0 - dx0, -(height - (route_wirey0 - dy0)))  # Start path at point
                     p.l(rw, rh)  # Draw line to
@@ -302,7 +302,7 @@ def toSVG(read_path, path,path2):
                     #d.append(draw.Lines(route_wirex0,route_wirey1,stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0))
 
                     temp = temp + 2
-            d.append(g)
+        d.append(g)
 
 
 
