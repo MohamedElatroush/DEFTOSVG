@@ -58,7 +58,6 @@ def toSVG(read_path, path,path2):
     d.append(draw.Rectangle(dx0, -(height + dy0), width, height, fill='#D8FEEA', fill_opacity=0.4, ))
 
     # parsing the lef file
-
     lef_parser = LefParser(path)  # getting the lef file path
     lef_parser.parse()
 
@@ -224,6 +223,7 @@ def toSVG(read_path, path,path2):
     RouteEnd = 0
     RouteStart = 0
 
+    print(nets)
     for i in range(0, len(nets)):
         # checking that am at metal components
         if (nets[i]=="NET_DEF:"):
@@ -231,7 +231,7 @@ def toSVG(read_path, path,path2):
             #g = draw.Group(fill="Black", Class="net", id=net_ident)
             net_ident = net_ident.replace('<', '')
             net_ident = net_ident.replace('>', '')
-            g = draw.Group(fill="Black", Class="net", id=net_ident)
+            g = draw.Group()
 
         if (nets[i] == "metal1" or nets[i] == "metal2" or nets[i] == "metal3" or nets[i] == "metal4" or nets[i]=="via1" or nets[i]=="via2"or nets[i]=="via3"):
             RouteStart = i
@@ -262,14 +262,17 @@ def toSVG(read_path, path,path2):
             # COLOR CODE For each via1
                 met = nets[i]
                 color = "#83FFC3"
+                strokewidth = 0.6 * 100
             elif (nets[i] == "via2"):
                 # COLOR CODE For each via2
                 met = nets[i]
                 color = "#FFD683"
+                strokewidth = 0.6 * 100
             elif (nets[i] == "via3"):
                 met = nets[i]
                 # COLOR CODE For each via3
                 color = "#83FFE1"
+                strokewidth = 0.6 * 100
 
             # print(RouteStart)
 
@@ -288,17 +291,18 @@ def toSVG(read_path, path,path2):
                     route_wirey0 = int(nets[temp + 2].strip("[],"))
                     route_wirex1 = int(nets[temp + 3].strip("[],"))
                     route_wirey1 = int(nets[temp + 4].strip("[],"))
-                    p = draw.Path(stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0, id=met)
-                    #g.append(draw.Rectangle(route_wirex1 - route_wirex0, route_wirey1 - route_wirey0,route_wirex0 - dx0, -(height  - (route_wirey0 - dy0)),stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0,id = met))
-                    #g.append(draw.Rectangle( route_wirex0 - dx0,
-                                       #-(height - (route_wirey0 - dy0)),route_wirex1 - route_wirex0, route_wirey1 - route_wirey0, stroke_width=strokewidth, stroke=color,
-                                       #stroke_opacity=0.7, fill_opacity=0, id=met))
-                    p.M(route_wirex0 - dx0, -(height - (route_wirey0 - dy0)))  # Start path at point
-                    p.l(route_wirex1 - route_wirex0, route_wirey1 - route_wirey0)  # Draw line to
-                    g.append(p)
-                    temp = temp + 2
+                    rw =route_wirex1-route_wirex0
+                    rh = route_wirey1-route_wirey0
+                    #p = draw.Path(stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0)
+                   # d.append(draw.Lines(route_wirex0,route_wirey1,stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0))
+                    #p.M(route_wirex0 - dx0, -(height - (route_wirey0 - dy0)))  # Start path at point
+                    #p.l(rw, rh)  # Draw line to
+                    #g.append(p)
+                    d.append(draw.Rectangle(route_wirex0 - dx0,-(height - (route_wirey0 - dy0)),abs(rw)+50 ,abs(rh)+50,stroke_width=strokewidth, stroke="#FFF300", stroke_opacity=0, fill_opacity=0.5, class_="net",id=net_ident))
+                    d.append(draw.Lines(route_wirex0,route_wirey1,stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0))
 
-                d.append(g)
+                    temp = temp + 2
+            # d.append(g)
 
 
 

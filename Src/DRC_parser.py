@@ -3,7 +3,7 @@
 class DRC_parser:
 
     def __init__(self, DRC_file):
-        self.file_path = "tritonRoute.drc"
+        self.file_path = DRC_file
         self.violation_type = None
         self.x1 = None
         self.x2 = None
@@ -12,10 +12,8 @@ class DRC_parser:
         self.drc_list = []
 
 
-    def DRC_parser(self):
-        # f = open(self.file_path,"r")
-        # x = f.readlines()
-        # print(x)
+
+    def parse(self):
         with open(self.file_path,'r') as f:
             data = f.read().replace('\n', '')
         x=data.split()
@@ -23,7 +21,7 @@ class DRC_parser:
             if "-" in x:
                 x.remove("-")
 
-        print(x)
+
 
         for i in range(0,len(x)):
             if (x[i] == "type:"):
@@ -56,15 +54,11 @@ class DRC_parser:
                 self.drc_list.append(self.y1)
                 self.drc_list.append(self.x2)
                 self.drc_list.append(self.y2)
-        
 
-        print(self.drc_list)
-
-
+        return self.drc_list
+        # print(self.drc_list)
 
 
 
 
-drc_parser=DRC_parser("tritonRoute.drc")
-drc_parser.DRC_parser()
 
