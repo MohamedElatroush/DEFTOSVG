@@ -293,16 +293,16 @@ def toSVG(read_path, path,path2):
                     route_wirey1 = int(nets[temp + 4].strip("[],"))
                     rw =route_wirex1-route_wirex0
                     rh = route_wirey1-route_wirey0
-                    #p = draw.Path(stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0)
+                    p = draw.Path(stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0)
                    # d.append(draw.Lines(route_wirex0,route_wirey1,stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0))
-                    #p.M(route_wirex0 - dx0, -(height - (route_wirey0 - dy0)))  # Start path at point
-                    #p.l(rw, rh)  # Draw line to
-                    #g.append(p)
-                    d.append(draw.Rectangle(route_wirex0 - dx0,-(height - (route_wirey0 - dy0)),abs(rw)+50 ,abs(rh)+50,stroke_width=strokewidth, stroke="#FFF300", stroke_opacity=0, fill_opacity=0.5, class_="net",id=net_ident))
-                    d.append(draw.Lines(route_wirex0,route_wirey1,stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0))
+                    p.M(route_wirex0 - dx0, -(height - (route_wirey0 - dy0)))  # Start path at point
+                    p.l(rw, rh)  # Draw line to
+                    g.append(p)
+                    d.append(draw.Rectangle(route_wirex0 - dx0,-(height - (route_wirey0 - dy0)),abs(rw)+50 ,abs(rh)+50,stroke_width=strokewidth, stroke="#FFF300", stroke_opacity=0, fill_opacity=0.5, class_="net",id=net_ident+"_net"))
+                    #d.append(draw.Lines(route_wirex0,route_wirey1,stroke_width=strokewidth, stroke=color, stroke_opacity=0.7, fill_opacity=0))
 
                     temp = temp + 2
-            # d.append(g)
+            d.append(g)
 
 
 
